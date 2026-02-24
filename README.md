@@ -3,40 +3,35 @@ Project: Pixel Hearts
 Overview
 
 Project: Pixel Hearts is an experimental virtual grid concept exploring shared digital worlds.
+It combines nostalgia from classic social platforms with modern usability and creative freedom.
+This is a passion project, not a commercial MMO.
 
-Inspired by past virtual communities, it combines modern usability with creative freedom.
+Key Concept:
 
-Note: This is a passion project, not a commercial MMO.
+Sandbox for ideas
 
-Think of it as:
-
-A sandbox for ideas
-
-A collaborative digital frontier
+Collaborative digital frontier
 
 Community-driven exploration
 
-Goals
+ Project Goals
+Goal	Description
+Creative Freedom	User-built environments, custom avatars, attachments, community-driven content
+Modular Worlds	Interconnected regions, scalable design, flexible environments
+Creator-First Philosophy	Open collaboration, idea-driven development, welcoming to all creators
+ Current Focus
 
-Creative Freedom: user-built environments, avatars, and content
-
-Modular Worlds: connected regions with scalable design
-
-Creator-First: open collaboration, idea-driven growth
-
-Current Focus
-
-Website and documentation
+Website & public documentation
 
 Concept visualization
 
 Community feedback
 
-Proof-of-concept single region
+Proof-of-concept single shared region
 
-No promises or deadlines — just building something interesting together.
+Focus is on creativity and building together — no deadlines or promises.
 
-Inspiration
+ Inspiration
 
 Pixel Hearts draws from:
 
@@ -48,23 +43,25 @@ Modern platforms: Discord, Steam
 
 Goal: combine nostalgia with modern usability.
 
-What We’re Building
+ What We’re Building First
 
-Immediate focus:
+Immediate priorities:
 
 Project website & vision hub
 
 Single shared region as proof-of-concept
 
-Community engagement & feedback
+Community outreach & feedback
 
 Early visual identity
 
-Custom Profiles & Social Media
+ Custom Profiles & Social Media
 
-We plan next-generation in-game profiles:
+Next-gen in-game profiles:
 
-Personalized profiles like old social platforms but modernized
+Personalized profiles inspired by old social platforms but modernized
+
+Layouts influenced by Discord & Steam for usability
 
 Features may include:
 
@@ -74,78 +71,60 @@ Features may include:
 - Friends lists
 - Event notifications
 
-Purpose: allow users to express identity and socialize effectively in-game.
+Allows users to express identity and socialize effectively in-game.
 
-Security & Community Safety
-
-Pixel Hearts values a safe environment.
+ Security & Community Safety
 
 Expectations:
 
 Respectful communication
 
-No trolling or harassment
+No trolling, harassment, or griefing
 
-No griefing or intentional disruption
+Potential Safeguards:
 
-Safeguards:
+Block / mute options
 
-Block/mute options
+Basic moderation
 
-Basic moderation tools
-
-Community reporting systems
+Community reporting
 
 Goal: minimize disruption while keeping the environment open.
 
-Ideas & Exploration
+ Ideas & Exploration
+Concept	Description
+Avatar Customization	Clothing, accessories, animation options
+Interactive Environments	Objects, tools, mini-games
+Community Events	Gatherings, challenges, competitions
+Personal Spaces	Housing, creative rooms
+Marketplace	Trade and resource systems
+Lighting & Weather	Dynamic environments, day/night cycles
+Creative Tools	In-game building & scripting options
+Public/Private Regions	Social vs personal spaces
+Achievements	Badges, progression systems
+External Integration	Link to other platforms or social content
 
-Potential features include:
+These are conceptual ideas, not promises.
 
-- Advanced avatar customization
-- Interactive objects & environments
-- Mini-games or challenges
-- Community events
-- Personalizable housing
-- Marketplace or trade systems
-- Dynamic lighting & weather
-- Creative in-game building tools
-- Public/private regions
-- Achievements & progression
-- Integration with external platforms
+ Contributing
+Role	Description
+Developers	Frontend, backend, WebGL, 3D engines
+3D Artists & Animators	Avatar, world, and object creation
+Designers	UI/UX, world-building
+Writers & World Builders	Lore, storylines, quests
+Curious Thinkers	Idea generation, feedback, problem solving
 
-These are conceptual ideas, flexible for exploration.
+Contact us: mochidevgames@gmail.com
 
-Contributing
+Students and hobbyists welcome — creativity > experience.
 
-We welcome creators of all skill levels:
+ Quick Links (Clickable “Buttons”)
+Action	Link
+Project Website	Pixel Hearts Hub
 
-Developers (frontend, backend, WebGL, 3D engines)
+Submit Feedback	Email us
 
-3D Artists & Animators
-
-Designers (UI/UX, world-building)
-
-Writers & world builders
-
-Curious thinkers
-
-Interested? Reach out:
-
-📧 Email: mochidevgames@gmail.com
-
-Students and hobbyists welcome. Experience is secondary to creativity.
-
-Quick Links
-
-Visit our website: Pixel Hearts Hub
-
-Submit feedback or ideas: Email us
-)
-Join the project: Contact us
-
-These “buttons” are styled as clickable Markdown links.
-
+Join the Project	Contact us
 Philosophy
 
 Start small, grow organically
@@ -178,4 +157,4 @@ Goal: build something inspiring together
 
 License
 
-Currently undecided. Will be added once project contributions grow.
+Currently undecided — will be added once project contributions grow.
