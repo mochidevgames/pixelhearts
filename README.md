@@ -1,164 +1,181 @@
-<h1 align="center">PixelHearts</h1>
+Project: Pixel Hearts
+<p align="center"> <h1 align="center" style="font-family:serif;"> Pixel Hearts </h1> <p align="center"> <em>A creative sandbox for builders, artists, and explorers</em> </p> </p>
+Overview
 
-<p align="center">
-Next-Generation Virtual Grid Experiment
-</p>
+Project: Pixel Hearts is an experimental virtual grid concept exploring shared digital worlds.
 
-<p align="center">
-A passion project exploring social virtual worlds in the browser.
-</p>
+Inspired by past virtual communities, it combines modern usability with creative freedom.
 
+Note: This is a passion project, not a commercial MMO.
 
-Experimental Virtual Grid Viewer
+Think of it as:
 
-A passion project exploring the future of social virtual worlds in the browser.
+A sandbox for ideas
 
-Inspired by
-Second Life •
-Gaia Online •
-IMVU
+A collaborative digital frontier
 
-Project Status
+Community-driven exploration
 
-Early concept stage.
+Goals
 
-This repository currently focuses on:
+Creative Freedom: user-built environments, avatars, and content
 
-• Vision
-• Documentation
-• Website hub
-• Community building
+Modular Worlds: connected regions with scalable design
 
-Development will grow as contributors join.
+Creator-First: open collaboration, idea-driven growth
 
-There are no promises or timelines yet.
+Current Focus
 
-The Idea
+Website and documentation
 
-PixelHearts is designed as a Grid Viewer rather than a traditional MMO.
+Concept visualization
 
-Instead of one giant world, the platform connects multiple regions together.
+Community feedback
 
-Example layout:
+Proof-of-concept single region
 
-Central Plaza
-Marketplace
-Nightclubs
-Creator Spaces
-Player Housing
-Event Worlds
+No promises or deadlines — just building something interesting together.
 
-Players move freely between these locations while keeping their avatar and identity.
+Inspiration
 
-We start with one shared space, then expand outward.
+Pixel Hearts draws from:
 
-Vision
+Virtual worlds: Second Life, IMVU, Gaia Online
 
-The internet used to have places where people simply existed together.
+Classic social platforms: Myspace, early forums
 
-Old communities like forums, profile pages, and early virtual worlds created spaces where creativity and identity mattered.
+Modern platforms: Discord, Steam
 
-PixelHearts explores whether that feeling can be rebuilt with modern technology.
+Goal: combine nostalgia with modern usability.
 
-Goals include:
+What We’re Building
 
-• expressive avatars
-• creative communities
-• customizable spaces
-• user-driven environments
+Immediate focus:
 
-Core Exploration
+Project website & vision hub
 
-These are areas the project hopes to explore over time.
+Single shared region as proof-of-concept
 
-Avatar Systems
+Community engagement & feedback
 
-• walking and movement
-• deep customization
-• wearable attachments
-• expressive animation
+Early visual identity
 
-World Systems
+Custom Profiles & Social Media
 
-• connected grid regions
-• social hubs
-• player environments
-• interactive objects
+We plan next-generation in-game profiles:
 
-Visual Systems
+Personalized profiles like old social platforms but modernized
 
-• dynamic lighting
-• atmosphere
-• environmental design
+Features may include:
 
-These ideas are directional, not promises.
+- Mini activity feed / wall
+- Avatar showcase
+- Custom profile themes & badges
+- Friends lists
+- Event notifications
+
+Purpose: allow users to express identity and socialize effectively in-game.
+
+Security & Community Safety
+
+Pixel Hearts values a safe environment.
+
+Expectations:
+
+Respectful communication
+
+No trolling or harassment
+
+No griefing or intentional disruption
+
+Safeguards:
+
+Block/mute options
+
+Basic moderation tools
+
+Community reporting systems
+
+Goal: minimize disruption while keeping the environment open.
+
+Ideas & Exploration
+
+Potential features include:
+
+- Advanced avatar customization
+- Interactive objects & environments
+- Mini-games or challenges
+- Community events
+- Personalizable housing
+- Marketplace or trade systems
+- Dynamic lighting & weather
+- Creative in-game building tools
+- Public/private regions
+- Achievements & progression
+- Integration with external platforms
+
+These are conceptual ideas, flexible for exploration.
+
+Contributing
+
+We welcome creators of all skill levels:
+
+Developers (frontend, backend, WebGL, 3D engines)
+
+3D Artists & Animators
+
+Designers (UI/UX, world-building)
+
+Writers & world builders
+
+Curious thinkers
+
+Interested? Reach out:
+
+📧 Email: mochidevgames@gmail.com
+
+Students and hobbyists welcome. Experience is secondary to creativity.
+
+Quick Links
+
+Visit our website: Pixel Hearts Hub
+
+Submit feedback or ideas: Email us
+)
+Join the project: Contact us
+
+These “buttons” are styled as clickable Markdown links.
 
 Philosophy
 
-Start small.
-Build openly.
-Let people shape the project.
+Start small, grow organically
 
-PixelHearts is less about shipping a product and more about exploring what a modern social world could become.
+Build openly and collaboratively
 
-Who We're Looking For
+Prioritize creativity, expression, and community
 
-Anyone curious about virtual worlds.
+Pixel Hearts is about exploration, not a finished product.
 
-Examples include:
+Future Repository Sections
 
-Developers
-3D Artists
-Animators
-UI Designers
-Writers
-World Builders
-Students
-Hobbyists
+Development logs
 
-You do not need to be an expert.
+Concept art & mockups
 
-Curiosity and creativity matter more.
+Technology stack overview
 
-Getting Involved
+Roadmap & milestones
 
-Have ideas? Want to help?
+Early playable prototypes
 
-You can:
+Transparency
 
-• open a GitHub issue
-• discuss ideas
-• contribute code or assets
+Passion project
 
-Or email:
+No guaranteed funding or release date
 
-mochidevgames@gmail.com
+Goal: build something inspiring together
 
-Website
+License
 
-Project page
-
-https://mochidevgames.github.io/pixelhearts/
-
-Codename Notice
-
-PixelHearts is a working title.
-
-The final name may evolve as the project grows.
-
-Future Repository Plans
-
-Possible additions:
-
-CONTRIBUTING.md
-ROADMAP.md
-DEVLOG.md
-ARCHITECTURE.md
-
-These will help organize development if the project gains traction.
-
-Final Thought
-
-If you ever missed logging into a world just to hang out with people...
-
-You already understand the idea behind PixelHearts.
+Currently undecided. Will be added once project contributions grow.
