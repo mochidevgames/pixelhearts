@@ -1,307 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: Pixel Hearts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { height: 100%; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
 
-<title>Pixel Hearts ♥ Project</title>
+    /* --- Marbled CSS Background --- */
+    body {
+      background: linear-gradient(145deg, #fdfdfd 0%, #e8e8e8 100%);
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(0,0,0,0.03) 0%, transparent 70%),
+        linear-gradient(120deg, rgba(191,161,43,0.15) 0%, transparent 50%, rgba(191,161,43,0.15) 100%),
+        linear-gradient(60deg, rgba(128,128,128,0.1) 0%, transparent 50%, rgba(128,128,128,0.05) 100%);
+      background-blend-mode: overlay, overlay, normal;
+      color: #333;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    /* --- Header / Navbar --- */
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
 
-<style>
+    header h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.5rem;
+      color: #bfa12b;
+    }
 
-body{
-font-family: 'Inter', sans-serif;
-margin:0;
-background:#ffffff;
-color:#222;
-line-height:1.6;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
 
-header{
-padding:60px 20px;
-text-align:center;
-border-bottom:1px solid #eee;
-}
+    nav ul li { position: relative; }
 
-header h1{
-font-size:42px;
-letter-spacing:2px;
-}
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-header p{
-max-width:700px;
-margin:auto;
-font-size:18px;
-color:#555;
-}
+    nav ul li a:hover { color: #bfa12b; }
 
-nav{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:15px;
-border-bottom:1px solid #eee;
-background:white;
-position:sticky;
-top:0;
-}
+    /* Dropdown */
+    nav ul li ul {
+      position: absolute;
+      top: 2.5rem;
+      left: 0;
+      display: none;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(5px);
+      padding: 0.5rem 0;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
 
-nav a{
-text-decoration:none;
-color:#444;
-font-weight:600;
-}
+    nav ul li:hover ul { display: block; }
+    nav ul li ul li { padding: 0.5rem 1rem; }
+    nav ul li ul li a { font-weight: normal; }
 
-nav a:hover{
-color:#000;
-}
+    /* --- Sections --- */
+    section { padding: 8rem 2rem 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    section h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #bfa12b;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    section p { margin-bottom: 1rem; line-height: 1.6; text-align: center; }
 
-section{
-max-width:900px;
-margin:auto;
-padding:60px 20px;
-}
+    /* Pixel-style Boxes */
+    .pixel-box {
+      background: rgba(255,255,255,0.85);
+      border: 2px solid #bfa12b;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
 
-h2{
-margin-bottom:15px;
-}
+    /* Table Styles */
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    table th, table td { border: 2px solid #bfa12b; padding: 0.75rem 1rem; text-align: left; }
+    table th { background: #fff8e7; }
 
-.grid{
-background:#fafafa;
-border:1px solid #eee;
-padding:20px;
-margin-top:20px;
-font-family:monospace;
-}
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background: #bfa12b;
+      color: #fff;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .btn:hover { transform: scale(1.05); }
 
-.callout{
-background:#f5f5f5;
-border-left:4px solid #999;
-padding:20px;
-margin:25px 0;
-}
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255,255,255,0.85);
+      border-top: 2px solid #bfa12b;
+    }
 
-.email{
-text-align:center;
-margin-top:40px;
-font-size:18px;
-}
-
-footer{
-margin-top:80px;
-padding:40px;
-background:#fafafa;
-text-align:center;
-font-size:14px;
-color:#777;
-}
-
-button{
-background:black;
-color:white;
-border:none;
-padding:14px 28px;
-font-size:16px;
-cursor:pointer;
-margin-top:20px;
-}
-
-button:hover{
-opacity:.85;
-}
-
-</style>
+    /* Join button at bottom */
+    .join-btn { font-size: 1.2rem; padding: 1rem 2rem; }
+  </style>
 </head>
-
 <body>
 
-<header>
+  <!-- HEADER / NAV -->
+  <header>
+    <h1>Pixel Hearts</h1>
+    <nav>
+      <ul>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#features">Features</a></li>
+        <li>
+          <a href="#">Join</a>
+          <ul>
+            <li><a href="#coders">Coders</a></li>
+            <li><a href="#animators">Animators</a></li>
+            <li><a href="#designers">Designers</a></li>
+            <li><a href="#idea">Ideas</a></li>
+          </ul>
+        </li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<h1>Pixel Hearts ♥</h1>
+  <!-- VISION -->
+  <section id="vision" class="pixel-box">
+    <h2>Our Vision</h2>
+    <p>Project: Pixel Hearts is a creative sandbox social grid, inspired by Second Life, Gaia Online, IMVU, and old Myspace.</p>
+    <p>We aim to merge <strong>community, creativity, and exploration</strong> in a modern, user-friendly virtual space.</p>
+  </section>
 
-<p>
-A next-generation social virtual world concept inspired by the golden era of online communities and modern grid platforms.
-</p>
+  <!-- FEATURES -->
+  <section id="features" class="pixel-box">
+    <h2>Features</h2>
+    <p>Custom avatars, social profiles, interactive spaces, and a flexible world grid designed for collaboration and fun.</p>
 
-</header>
+    <h3>World Grid</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Region</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Central Plaza</td>
+          <td>Main social hub where players meet and interact</td>
+        </tr>
+        <tr>
+          <td>Marketplace</td>
+          <td>Trade, shops, and creative economy</td>
+        </tr>
+        <tr>
+          <td>Clubs</td>
+          <td>Music venues and community gathering places</td>
+        </tr>
+        <tr>
+          <td>Creator Spaces</td>
+          <td>Workshops, studios, and collaborative building areas</td>
+        </tr>
+        <tr>
+          <td>Housing Districts</td>
+          <td>Personal homes and customizable living spaces</td>
+        </tr>
+        <tr>
+          <td>Event Regions</td>
+          <td>Spaces for events, competitions, and activities</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-<nav>
-<a href="#vision">Vision</a>
-<a href="#project">Project</a>
-<a href="#features">Features</a>
-<a href="#future">Future</a>
-<a href="#join">Join</a>
-</nav>
+  <!-- JOIN / TEAM -->
+  <section id="join" class="pixel-box">
+    <h2>Join the Project</h2>
+    <p>We’re seeking passionate coders, animators, designers, and idea contributors.</p>
+    <p>This is a <strong>passion project</strong> — currently unpaid, but we aim to reward contributors once the project grows.</p>
+    <a class="btn join-btn" href="mailto:mochidevgames@gmail.com">Join Us</a>
+  </section>
 
-<section id="vision">
+  <!-- INDIVIDUAL ROLES -->
+  <section id="coders" class="pixel-box">
+    <h2>Coders</h2>
+    <p>We need developers who want to experiment with Unity, networking, avatars, and world-building.</p>
+  </section>
 
-<h2>The Vision</h2>
+  <section id="animators" class="pixel-box">
+    <h2>Animators</h2>
+    <p>Create avatar animations, movements, gestures, and interactive objects.</p>
+  </section>
 
-<p>
-Pixel Hearts ♥ is an experimental passion project exploring what the next generation of virtual social worlds could become.
-</p>
+  <section id="designers" class="pixel-box">
+    <h2>Designers</h2>
+    <p>UI/UX, world-building, and concept art. Help define the visual style of Pixel Hearts.</p>
+  </section>
 
-<p>
-Inspired by classic internet communities and modern virtual worlds, the goal is to build something creative, social, expressive, and community driven.
-</p>
+  <section id="idea" class="pixel-box">
+    <h2>Ideas & Contributions</h2>
+    <p>Submit world concepts, game mechanics, social features, or creative ideas to explore.</p>
+    <a class="btn" href="mailto:mochidevgames@gmail.com">Submit Ideas</a>
+  </section>
 
-<div class="callout">
-This project is early.  
-There are no promises, timelines, or guarantees.  
-Only curiosity, passion, and the desire to build something meaningful together.
-</div>
+  <!-- COMMUNITY -->
+  <section id="community" class="pixel-box">
+    <h2>Community</h2>
+    <p>Our focus is on creating a fun, collaborative, and welcoming environment for creators of all skill levels.</p>
+  </section>
 
-</section>
-
-<section id="project">
-
-<h2>What PixelHearts Is</h2>
-
-<p>
-Pixel Hearts ♥ is planned as a browser based Grid Viewer connecting users to shared virtual spaces.
-  A dedicated viewer will be looked at in the future as we develop.
-</p>
-
-<p>
-Instead of a traditional MMO, the world is made of regions connected together in a grid.
-</p>
-
-<section id="world-grid" class="pixel-box">
-  <h2>World Grid</h2>
-  <table style="width:100%; border-collapse:collapse;">
-    <thead>
-      <tr>
-        <th style="padding:8px; border:1px solid #bfa12b; background:#f2f2f2;">Region</th>
-        <th style="padding:8px; border:1px solid #bfa12b; background:#f2f2f2;">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding:8px; border:1px solid #bfa12b;">Central Plaza</td>
-        <td style="padding:8px; border:1px solid #bfa12b;">Main social hub where players meet and interact</td>
-      </tr>
-      <tr>
-        <td style="padding:8px; border:1px solid #bfa12b;">Marketplace</td>
-        <td style="padding:8px; border:1px solid #bfa12b;">Trade areas, shops, and creative economy</td>
-      </tr>
-      <tr>
-        <td style="padding:8px; border:1px solid #bfa12b;">Clubs</td>
-        <td style="padding:8px; border:1px solid #bfa12b;">Music venues and social gathering places</td>
-      </tr>
-      <tr>
-        <td style="padding:8px; border:1px solid #bfa12b;">Creator Spaces</td>
-        <td style="padding:8px; border:1px solid #bfa12b;">Workshops, studios, and collaborative creation areas</td>
-      </tr>
-      <tr>
-        <td style="padding:8px; border:1px solid #bfa12b;">Housing Districts</td>
-        <td style="padding:8px; border:1px solid #bfa12b;">Personal homes and customizable living spaces</td>
-      </tr>
-      <tr>
-        <td style="padding:8px; border:1px solid #bfa12b;">Event Regions</td>
-        <td style="padding:8px; border:1px solid #bfa12b;">Spaces designed for events, competitions, and activities</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<p>
-The project will begin small with a single space and grows outward as contributors and ideas expand the platform.
-</p>
-
-</section>
-
-<section id="features">
-
-<h2>Core Direction</h2>
-
-<p>
-The long-term vision explores modern systems similar to those seen in existing virtual worlds while pushing customization and creativity further.
-</p>
-
-<ul>
-
-<li>Full 3D camera control</li>
-<li>Walking avatars and movement</li>
-<li>Advanced avatar customization</li>
-<li>Attachment systems</li>
-<li>Lighting and atmosphere</li>
-<li>Animated objects and characters</li>
-<li>Interactive environments</li>
-
-</ul>
-
-<p>
-Creators should feel unrestricted and empowered to experiment.
-</p>
-
-</section>
-
-<section id="future">
-
-<h2>Long Term Exploration</h2>
-
-<p>
-If the project evolves, Pixel Hearts ♥ could expand into a much larger platform supporting creators, events, and community driven worlds.
-</p>
-
-<ul>
-
-<li>Creator tools</li>
-<li>User worlds</li>
-<li>Events and social hubs</li>
-<li>Marketplace systems</li>
-<li>Expanded avatar technology</li>
-
-</ul>
-
-<p>
-The goal is to explore what a modern grid-based virtual world could become.
-</p>
-
-</section>
-
-<section id="join">
-
-<h2>Join the Project</h2>
-
-<p>
-Pixel Hearts ♥ is currently a passion project looking for people who enjoy building creative things.
-</p>
-
-<p>
-Developers, artists, animators, designers, curious thinkers, or anyone who loves virtual worlds is welcome to contribute ideas or help shape the direction.
-</p>
-
-<div class="callout">
-
-There is currently no funding or payment.  
-This project exists because people enjoy building interesting things together.
-
-If the project grows, we will figure out the future together.
-
-</div>
-
-<div class="email">
-
-<p>
-Want to help, share ideas, or get involved?
-</p>
-
-<p>
-Email: <strong>mochidevgames@gmail.com</strong>
-</p>
-
-</div>
-
-</section>
-
-<footer>
-
-Pixel Hearts ♥ — Project Codename  
-Website and concept subject to change as the project evolves.  
-
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>Project: Pixel Hearts | Contact: <a href="mailto:mochidevgames@gmail.com">mochidevgames@gmail.com</a></p>
+    <p>Website style and layout subject to change as the project evolves.</p>
+  </footer>
 
 </body>
 </html>
