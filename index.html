@@ -8,27 +8,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------------- BODY RETRO BACKGROUND ---------------- */
+/* ---------------- GLOBAL ---------------- */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Orbitron', sans-serif;
   overflow-x:hidden;
-  background: #a0d8f1; /* soft sky blue */
-  background-image: 
-    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%), 
-    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%), 
-    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%), 
-    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
-  background-size: 40px 40px;
-  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
-  transition: background 2s linear;
-  animation: retroGridMove 60s linear infinite;
+  background: #fff;
+  position: relative;
 }
 
-/* Retro grid animation */
-@keyframes retroGridMove {
-  0% {background-position: 0 0, 0 20px, 20px -20px, -20px 0px;}
-  100% {background-position: 20px 20px, 20px 40px, 40px 0px, 0px 20px;}
+/* GOLD ETCHED GLITTER EFFECT */
+body::before {
+  content:"";
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:
+    radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 60%) repeat;
+  pointer-events:none;
+  z-index:-1;
+  animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {background-position:0 0;}
+  100% {background-position:1000px 1000px;}
 }
 
 /* ---------------- NAVBAR ---------------- */
@@ -37,8 +41,9 @@ nav{
   justify-content:space-between;
   align-items:center;
   padding:15px 8%;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(6px);
+  background:rgba(255,255,255,0.9);
+  box-shadow:0 0 15px rgba(255,215,0,0.5);
+  backdrop-filter:blur(8px);
   position:fixed;
   width:100%;
   z-index:100;
@@ -46,19 +51,20 @@ nav{
 
 .logo{
   font-family:'Press Start 2P', monospace;
-  color:#ff6ad5;
+  color:#bfa12b;
   font-size:20px;
+  text-shadow:0 0 10px #ffd700;
 }
 
 .nav-links a{
   margin-left:18px;
   text-decoration:none;
-  color:white;
-  opacity:.8;
+  color:#444;
+  font-weight:bold;
   transition:0.3s;
 }
 
-.nav-links a:hover{opacity:1; color:#8f9bff;}
+.nav-links a:hover{color:#bfa12b; text-shadow:0 0 10px #ffd700;}
 
 /* Dropdown */
 .dropdown{
@@ -69,19 +75,19 @@ nav{
 
 .dropbtn{
   cursor:pointer;
-  color:white;
+  color:#444;
+  font-weight:bold;
   text-decoration:none;
-  opacity:.8;
 }
 
-.dropbtn:hover{opacity:1; color:#8f9bff;}
+.dropbtn:hover{color:#bfa12b; text-shadow:0 0 10px #ffd700;}
 
 .dropdown-content{
   display:none;
   position:absolute;
-  background-color:rgba(10,10,20,0.95);
+  background-color:rgba(255,255,255,0.95);
   min-width:180px;
-  box-shadow:0 8px 16px rgba(0,0,0,0.3);
+  box-shadow:0 8px 16px rgba(255,215,0,0.3);
   border-radius:10px;
   z-index:1000;
   margin-top:10px;
@@ -91,17 +97,18 @@ nav{
   display:block;
   padding:8px 12px;
   text-decoration:none;
-  color:white;
+  color:#444;
   font-family:'Press Start 2P', monospace;
   font-size:10px;
   transition:.2s;
 }
 
-.dropdown-content a:hover{background:rgba(255,106,213,0.2);}
+.dropdown-content a:hover{color:#bfa12b; text-shadow:0 0 8px #ffd700;}
+.dropdown:hover .dropdown-content{display:block;}
 
 /* ---------------- HERO ---------------- */
 .hero{
-  height:100vh;
+  height:90vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -114,16 +121,16 @@ nav{
 .hero h1{
   font-family:'Press Start 2P', monospace;
   font-size:48px;
-  color:#ff6ad5;
-  text-shadow:2px 2px #1e1e2d;
+  color:#bfa12b;
+  text-shadow:0 0 15px #ffd700;
 }
 
 .hero p{
   font-size:16px;
   margin-top:20px;
   max-width:700px;
-  color:white;
-  text-shadow:1px 1px #000;
+  color:#444;
+  text-shadow:0 0 4px rgba(255,215,0,0.5);
 }
 
 /* ---------------- SECTION BOXES ---------------- */
@@ -134,16 +141,16 @@ section{
 }
 
 .pixel-box{
-  background:rgba(0,0,0,0.5);
-  border:2px solid #ff6ad5;
+  background:rgba(255,255,255,0.9);
+  border:2px solid #bfa12b;
   border-radius:6px;
   padding:20px;
   margin:25px 0;
-  box-shadow:0 0 15px rgba(255,106,213,0.3);
+  box-shadow:0 0 25px rgba(255,215,0,0.3);
   font-family:'Press Start 2P', monospace;
   font-size:12px;
   line-height:1.5;
-  color:white;
+  color:#444;
   text-align:left;
 }
 
@@ -154,98 +161,30 @@ section{
   font-size:22px;
   border:none;
   border-radius:8px;
-  background:linear-gradient(90deg,#ff6ad5,#8f9bff);
+  background:linear-gradient(90deg,#bfa12b,#ffd700);
   color:white;
   cursor:pointer;
   margin-top:20px;
-  box-shadow:0 0 30px rgba(255,106,213,0.5);
+  box-shadow:0 0 40px rgba(255,215,0,0.5);
   transition:0.3s;
 }
 
 .join-btn:hover{
   transform:translateY(-5px);
-  box-shadow:0 0 50px rgba(255,106,213,0.8);
+  box-shadow:0 0 60px rgba(255,215,0,0.8);
 }
 
-/* ---------------- PIXEL GRASS ---------------- */
-#pixel-grass {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 120px;
-  overflow: hidden;
-  background: linear-gradient(to top, #2b4d12 0%, #3c6e1a 60%, #5bb54a 100%);
-  display: flex;
-  align-items: flex-end;
-  z-index: 50;
-}
-
-#pixel-grass .blade {
-  width: 4px;
-  height: 24px;
-  background: #2e7d24;
-  margin-right: 1px;
-  animation: grass-sway 4s ease-in-out infinite alternate;
-}
-#pixel-grass .blade:nth-child(4n) { animation-duration: 3.8s; }
-#pixel-grass .blade:nth-child(3n+1) { animation-duration: 4.2s; }
-#pixel-grass .blade:nth-child(5n+2) { animation-duration: 4.5s; }
-
-@keyframes grass-sway {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(4deg); }
-}
-
-/* ---------------- CLOUDS ---------------- */
-.cloud {
-  position: absolute;
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
-  width: 80px;
-  height: 50px;
-  top: 50px;
-  animation: cloudMove 120s linear infinite;
-}
-
-.cloud::before {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
-  top: -10px;
-  left: -25px;
-}
-
-.cloud::after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
-  top: -20px;
-  left: 30px;
-}
-
-@keyframes cloudMove {
-  0% { transform: translateX(-200px); }
-  100% { transform: translateX(120vw); }
-}
-
-/* ---------------- MOBILE ---------------- */
-@media(max-width:768px){
-  .nav-links{
-    flex-direction:column;
-  }
-  .dropdown-content{
-    position:relative;
-  }
+/* ---------------- SUBJECT TO CHANGE SECTION ---------------- */
+#style-change{
+  text-align:center;
+  margin:50px auto 30px;
+  font-family:'Press Start 2P', monospace;
+  font-size:10px;
+  color:#bfa12b;
+  text-shadow:0 0 8px #ffd700;
 }
 </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
@@ -257,8 +196,8 @@ section{
     <a href="#features">Features</a>
     <a href="#community">Community</a>
     <div class="dropdown">
-      <a href="javascript:void(0);" class="dropbtn" onclick="toggleDropdown()">Join / Team ▼</a>
-      <div class="dropdown-content" id="dropdown">
+      <a href="javascript:void(0);" class="dropbtn">Join / Team ▼</a>
+      <div class="dropdown-content">
         <a href="join.html">Join Project</a>
         <a href="roles.html">Open Roles</a>
         <a href="coder.html">Coders</a>
@@ -272,26 +211,16 @@ section{
   </div>
 </nav>
 
-<!-- PIXEL GRASS -->
-<div id="pixel-grass">
-  ${'<div class="blade"></div>'.repeat(200)}
-</div>
-
-<!-- CLOUDS -->
-<div class="cloud" style="top:60px; width:100px; height:60px; animation-duration:120s;"></div>
-<div class="cloud" style="top:100px; width:80px; height:50px; animation-duration:140s;"></div>
-<div class="cloud" style="top:30px; width:120px; height:70px; animation-duration:100s;"></div>
-
 <!-- HERO -->
 <div class="hero">
   <h1>PixelHearts</h1>
-  <p>A nostalgic social MMO where creativity, community, and fun collide. Build, hang out, and play in a pixel world inspired by Gaia Online, IMVU, RuneScape, and old internet vibes.</p>
+  <p>A modern, inviting social MMO with luxury pixel vibes. Express yourself, meet friends, and explore a world inspired by classic MMOs with a shiny, glowing new aesthetic.</p>
 </div>
 
 <!-- VISION -->
 <section id="vision" class="pixel-box">
   <h2>Our Vision</h2>
-  <p>Bring back the feeling of classic online communities. Express yourself with avatars, meet friends, decorate spaces, and shape a living digital world. PixelHearts is for the creators, dreamers, and those who remember the magic of old-school MMOs.</p>
+  <p>Bring back the feeling of classic online communities. Express yourself with avatars, meet friends, decorate spaces, and shape a living digital world. PixelHearts is for the creators, dreamers, and those who love social MMOs.</p>
 </section>
 
 <!-- FEATURES -->
@@ -301,26 +230,32 @@ section{
     <li>Deep avatar customization</li>
     <li>Social hangouts & player housing</li>
     <li>Events, trading, and community-driven content</li>
-    <li>Pixel-style art and nostalgic vibe</li>
+    <li>Modern, glowing retro style</li>
   </ul>
 </section>
 
 <!-- COMMUNITY / JOIN -->
 <section id="community" class="pixel-box">
   <h2>Join The Project</h2>
-  <p>PixelHearts is a passion project — we’re looking for coders, artists, animators, designers, and community builders who want to help bring this world to life. Volunteer-driven, but if the game grows we hope to reward contributors.</p>
+  <p>PixelHearts is a passion project — we’re looking for coders, artists, animators, designers, and community builders to help bring this world to life. Volunteer-driven, but if the game grows we hope to reward contributors.</p>
   <button class="join-btn">Join Us</button>
 </section>
 
+<!-- SUBJECT TO CHANGE -->
+<div id="style-change">
+  ⚠ Website style and background are <strong>Subject to Change</strong> as the project evolves ⚠
+</div>
+
 <script>
-function toggleDropdown(){
-  const dd = document.getElementById('dropdown');
-  dd.style.display = dd.style.display === 'block' ? 'none' : 'block';
-}
+// Dropdown click
+const dropbtn = document.querySelector('.dropbtn');
+const dropdown = document.querySelector('.dropdown-content');
+dropbtn.addEventListener('click', () => {
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+});
 window.onclick = function(e){
   if(!e.target.matches('.dropbtn')){
-    const dd = document.getElementById('dropdown');
-    if(dd.style.display === 'block'){ dd.style.display = 'none'; }
+    if(dropdown.style.display === 'block'){ dropdown.style.display = 'none'; }
   }
 }
 </script>
