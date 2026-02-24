@@ -1,3 +1,13 @@
+<h1 align="center">PixelHearts</h1>
+
+<p align="center">
+Next-Generation Virtual Grid Experiment
+</p>
+
+<p align="center">
+A passion project exploring social virtual worlds in the browser.
+</p>
+
 ██████╗ ██╗██╗  ██╗███████╗██╗     ██╗  ██╗███████╗ █████╗ ██████╗ ████████╗███████╗
 ██╔══██╗██║╚██╗██╔╝██╔════╝██║     ██║  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝
 ██████╔╝██║ ╚███╔╝ █████╗  ██║     ███████║█████╗  ███████║██████╔╝   ██║   ███████╗
