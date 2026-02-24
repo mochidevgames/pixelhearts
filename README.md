@@ -1,168 +1,160 @@
-PixelHearts
+██████╗ ██╗██╗  ██╗███████╗██╗     ██╗  ██╗███████╗ █████╗ ██████╗ ████████╗███████╗
+██╔══██╗██║╚██╗██╔╝██╔════╝██║     ██║  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝
+██████╔╝██║ ╚███╔╝ █████╗  ██║     ███████║█████╗  ███████║██████╔╝   ██║   ███████╗
+██╔═══╝ ██║ ██╔██╗ ██╔══╝  ██║     ██╔══██║██╔══╝  ██╔══██║██╔══██╗   ██║   ╚════██║
+██║     ██║██╔╝ ██╗███████╗███████╗██║  ██║███████╗██║  ██║██║  ██║   ██║   ███████║
+╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
 
-Project Codename — Experimental Virtual Grid Viewer
+Experimental Virtual Grid Viewer
 
-PixelHearts is an early-stage passion project exploring the future of browser-based social virtual worlds.
+A passion project exploring the future of social virtual worlds in the browser.
 
-Inspired by platforms like Second Life, Gaia Online, and IMVU, the goal is to experiment with a new generation of grid-based online spaces focused on creativity, customization, and community.
-
-This project is very early and currently serves as a concept, collaboration hub, and starting point for builders who want to explore the idea.
-
-The Idea
-
-PixelHearts aims to become a modern Grid Viewer for a shared virtual world.
-
-Instead of a single massive MMO map, the world is made of connected regions that players can move between freely.
-
-Example grid concept:
-
-Central Plaza
-Marketplace
-Creator Sandbox
-Nightclubs
-Player Housing
-Event Regions
-
-At the start, the goal is much smaller:
-
-Build one shared space where people can walk around, interact, and test ideas.
-
-If the project grows, the grid expands.
+Inspired by
+Second Life •
+Gaia Online •
+IMVU
 
 Project Status
 
-Early concept / prototype planning.
+Early concept stage.
 
-Current focus:
+This repository currently focuses on:
 
-• Project vision
+• Vision
+• Documentation
 • Website hub
 • Community building
-• Contributor interest
 
-Future development will depend on collaboration and interest from contributors.
+Development will grow as contributors join.
 
-There are currently no promises or deadlines.
+There are no promises or timelines yet.
 
-Core Goals
+The Idea
 
-The long-term vision explores features similar to modern virtual world platforms while pushing customization and creator freedom further.
+PixelHearts is designed as a Grid Viewer rather than a traditional MMO.
 
-Possible systems include:
+Instead of one giant world, the platform connects multiple regions together.
 
-• Full 3D camera controls
-• Walking avatars
-• Deep avatar customization
-• Attachment systems
-• Lighting and atmosphere
-• Animated objects and characters
-• Interactive environments
+Example layout:
 
-The focus is on enabling creativity rather than restricting it.
+Central Plaza
+Marketplace
+Nightclubs
+Creator Spaces
+Player Housing
+Event Worlds
 
-Why This Exists
+Players move freely between these locations while keeping their avatar and identity.
 
-Many early internet communities had a special feeling that modern platforms lost.
+We start with one shared space, then expand outward.
 
-Places where people:
+Vision
 
-• hung out
-• built things
-• expressed themselves
-• made friends
+The internet used to have places where people simply existed together.
 
-PixelHearts exists to explore whether that feeling can be brought back using modern technology.
+Old communities like forums, profile pages, and early virtual worlds created spaces where creativity and identity mattered.
 
-Important Notes
+PixelHearts explores whether that feeling can be rebuilt with modern technology.
 
-PixelHearts is currently:
+Goals include:
 
-• a passion project
-• unfunded
-• experimental
+• expressive avatars
+• creative communities
+• customizable spaces
+• user-driven environments
 
-There is no company behind it yet and no guaranteed outcome.
+Core Exploration
 
-If the project evolves into something bigger, we will figure out the future together.
+These are areas the project hopes to explore over time.
+
+Avatar Systems
+
+• walking and movement
+• deep customization
+• wearable attachments
+• expressive animation
+
+World Systems
+
+• connected grid regions
+• social hubs
+• player environments
+• interactive objects
+
+Visual Systems
+
+• dynamic lighting
+• atmosphere
+• environmental design
+
+These ideas are directional, not promises.
+
+Philosophy
+
+Start small.
+Build openly.
+Let people shape the project.
+
+PixelHearts is less about shipping a product and more about exploring what a modern social world could become.
 
 Who We're Looking For
 
-Anyone interested in virtual worlds, social platforms, or creative experiments is welcome.
+Anyone curious about virtual worlds.
 
-Examples:
+Examples include:
 
 Developers
 3D Artists
 Animators
 UI Designers
 Writers
-Community Builders
-World Designers
+World Builders
+Students
+Hobbyists
 
-Experience level does not matter.
+You do not need to be an expert.
 
-Students and hobbyists are welcome.
+Curiosity and creativity matter more.
 
-Current Direction (Technical)
+Getting Involved
 
-Exact technologies are still open, but likely areas include:
+Have ideas? Want to help?
 
-Frontend
-• WebGL
-• Three.js or Babylon.js
+You can:
 
-Networking
-• WebSockets
-• Node.js
+• open a GitHub issue
+• discuss ideas
+• contribute code or assets
 
-World Structure
-• Region based grid
-• Expandable environments
+Or email:
 
-This may change as contributors join.
-
-How To Get Involved
-
-If you want to:
-
-• contribute ideas
-• help develop
-• build prototypes
-• discuss possibilities
-
-Reach out.
-
-Email:
 mochidevgames@gmail.com
-
-You can also open an Issue on this repository to start a discussion.
-
-Project Philosophy
-
-Start small.
-Build openly.
-Let the community shape the direction.
-
-PixelHearts is less about launching a product and more about exploring what a modern social virtual world could become.
-
-Codename Notice
-
-PixelHearts is a working project name.
-
-The final name may change as the project evolves.
 
 Website
 
-Project page:
+Project page
 
 https://mochidevgames.github.io/pixelhearts/
 
-License
+Codename Notice
 
-To be determined as the project structure develops.
+PixelHearts is a working title.
+
+The final name may evolve as the project grows.
+
+Future Repository Plans
+
+Possible additions:
+
+CONTRIBUTING.md
+ROADMAP.md
+DEVLOG.md
+ARCHITECTURE.md
+
+These will help organize development if the project gains traction.
 
 Final Thought
 
-If you ever missed the early internet worlds where people just logged in and existed together…
+If you ever missed logging into a world just to hang out with people...
 
-You already understand the spirit of this project.
+You already understand the idea behind PixelHearts.
