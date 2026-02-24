@@ -6,64 +6,169 @@
 
 <title>PixelHearts</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0e0e14;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter, sans-serif;
+background:#05050a;
 color:white;
+overflow-x:hidden;
 }
 
-header{
-padding:60px 20px;
+/* animated gradient background */
+
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle at 20% 30%, #ff3cac, transparent 30%),
+radial-gradient(circle at 80% 40%, #784ba0, transparent 30%),
+radial-gradient(circle at 40% 80%, #2b86c5, transparent 30%);
+animation:moveBG 18s linear infinite;
+z-index:-1;
+opacity:.4;
+}
+
+@keyframes moveBG{
+0%{transform:translate(0,0)}
+50%{transform:translate(-25%, -25%)}
+100%{transform:translate(0,0)}
+}
+
+/* navbar */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-family:Orbitron;
+font-size:24px;
+letter-spacing:2px;
+color:#ff6ad5;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:white;
+opacity:.8;
+}
+
+/* hero */
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#ff4fd8,#6c5cff);
+padding:20px;
 }
 
-h1{
-font-size:48px;
-margin-bottom:10px;
+.hero h1{
+font-family:Orbitron;
+font-size:72px;
+background:linear-gradient(90deg,#ff6ad5,#8f9bff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.tagline{
+.hero p{
+margin-top:20px;
 font-size:20px;
-opacity:0.9;
+max-width:600px;
+opacity:.9;
 }
+
+.cta{
+margin-top:35px;
+padding:16px 36px;
+border:none;
+border-radius:12px;
+font-size:18px;
+background:linear-gradient(90deg,#ff6ad5,#8f9bff);
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px rgba(255,106,213,.6);
+transition:.3s;
+}
+
+.cta:hover{
+transform:translateY(-4px);
+box-shadow:0 0 35px rgba(255,106,213,.9);
+}
+
+/* section */
 
 section{
-max-width:900px;
+padding:100px 10%;
+max-width:1200px;
 margin:auto;
-padding:60px 20px;
-line-height:1.6;
 }
 
-.features{
+.section-title{
+font-family:Orbitron;
+font-size:36px;
+margin-bottom:40px;
+text-align:center;
+}
+
+/* cards */
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
 }
 
 .card{
-background:#1a1a25;
-padding:20px;
-border-radius:12px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
+padding:30px;
+border-radius:16px;
+backdrop-filter:blur(12px);
+transition:.3s;
 }
 
-button{
-background:#ff4fd8;
-border:none;
-padding:14px 26px;
-font-size:16px;
-border-radius:8px;
-cursor:pointer;
-margin-top:20px;
+.card:hover{
+transform:translateY(-8px);
+border-color:#ff6ad5;
+box-shadow:0 0 25px rgba(255,106,213,.3);
 }
+
+/* vision block */
+
+.vision{
+text-align:center;
+max-width:750px;
+margin:auto;
+font-size:18px;
+line-height:1.7;
+opacity:.9;
+}
+
+/* footer */
 
 footer{
 text-align:center;
-padding:30px;
-opacity:0.6;
+padding:40px;
+opacity:.6;
+border-top:1px solid rgba(255,255,255,.1);
 }
 
 </style>
@@ -71,69 +176,72 @@ opacity:0.6;
 
 <body>
 
-<header>
-<h1>PixelHearts</h1>
-<p class="tagline">A Social MMO Built for Creativity, Identity, and Community</p>
+<nav>
+<div class="logo">PixelHearts</div>
+<div>
+<a href="#">Vision</a>
+<a href="#">Features</a>
+<a href="#">Community</a>
+</div>
+</nav>
 
-<button>Join the Community</button>
-</header>
+<div class="hero">
+
+<h1>PixelHearts</h1>
+
+<p>
+A new social MMO where identity, creativity,
+and internet culture collide.
+</p>
+
+<button class="cta">Join the Community</button>
+
+</div>
 
 <section>
 
-<h2>Our Vision</h2>
+<h2 class="section-title">Our Vision</h2>
 
-<p>
-PixelHearts is a living online world where players create their identity, express their style, and build communities together.
-Inspired by classic internet social worlds, PixelHearts modernizes the experience with deeper customization, vibrant spaces, and a welcoming atmosphere.
-</p>
+<p class="vision">
+The internet used to feel like a world.  
+PixelHearts is our attempt to bring that feeling back.
 
-<p>
-Our goal is to bring back the magic of online hangout games while giving players the tools to shape their own stories, fashion, and culture.
+A place where players can express themselves through
+avatars, fashion, homes, and communities.
+
+Not just a game —
+a digital universe shaped by the people inside it.
 </p>
 
 </section>
 
 <section>
 
-<h2>Core Pillars</h2>
+<h2 class="section-title">Core Pillars</h2>
 
-<div class="features">
+<div class="grid">
 
 <div class="card">
 <h3>Expression</h3>
-<p>Create a unique avatar with deep customization, fashion, and collectibles.</p>
+<p>Create unique avatars with deep customization and collectible fashion.</p>
 </div>
 
 <div class="card">
 <h3>Community</h3>
-<p>Meet new people, hang out in social spaces, and form lasting friendships.</p>
+<p>Meet new friends, join scenes, and hang out in social spaces.</p>
 </div>
 
 <div class="card">
 <h3>Creativity</h3>
-<p>Design rooms, showcase outfits, and help shape the culture of the world.</p>
+<p>Decorate spaces, show off style, and influence the culture.</p>
 </div>
 
 <div class="card">
 <h3>Economy</h3>
-<p>Earn, trade, and collect rare cosmetics and items.</p>
+<p>Trade items, collect rare cosmetics, and build value.</p>
 </div>
 
 </div>
-
-</section>
-
-<section>
-
-<h2>What We're Building</h2>
-
-<p>
-• Deep avatar customization  
-• Player housing and social hubs  
-• Community events  
-• Fashion driven economy  
-• A vibrant evolving world
-</p>
 
 </section>
 
