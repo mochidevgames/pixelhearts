@@ -104,46 +104,50 @@ Goal: minimize disruption while keeping the environment open.
 
 
  
- Ideas & Exploration
+ Ideas & Exploration:
  
-Concept	Description
-Avatar Customization	Clothing, accessories, animation options
-Interactive Environments	Objects, tools, mini-games
-Community Events	Gatherings, challenges, competitions
-Personal Spaces	Housing, creative rooms
-Marketplace	Trade and resource systems
-Lighting & Weather	Dynamic environments, day/night cycles
-Creative Tools	In-game building & scripting options
-Public/Private Regions	Social vs personal spaces
-Achievements	Badges, progression systems
-External Integration	Link to other platforms or social content
+| Concept                  | Description                               |
+| ------------------------ | ----------------------------------------- |
+| Avatar Customization     | Clothing, accessories, animation options  |
+| Interactive Environments | Objects, tools, mini-games                |
+| Community Events         | Gatherings, challenges, competitions      |
+| Personal Spaces          | Housing, creative rooms                   |
+| Marketplace              | Trade and resource systems                |
+| Lighting & Weather       | Dynamic environments, day/night cycles    |
+| Creative Tools           | In-game building & scripting options      |
+| Public/Private Regions   | Social vs personal spaces                 |
+| Achievements             | Badges, progression systems               |
+| External Integration     | Link to other platforms or social content |
+
 
 These are conceptual ideas, not promises.
 
 
 
- Contributing
-Role	Description
-Developers	Frontend, backend, WebGL, 3D engines
-3D Artists & Animators	Avatar, world, and object creation
-Designers	UI/UX, world-building
-Writers & World Builders	Lore, storylines, quests
-Curious Thinkers	Idea generation, feedback, problem solving
+ Contributing:
+ 
+| Role                     | Description                                |
+| ------------------------ | ------------------------------------------ |
+| Developers               | Frontend, backend, WebGL, 3D engines       |
+| 3D Artists & Animators   | Avatar, world, and object creation         |
+| Designers                | UI/UX, world-building                      |
+| Writers & World Builders | Lore, storylines, quests                   |
+| Curious Thinkers         | Idea generation, feedback, problem solving |
 
 Contact us: mochidevgames@gmail.com
 
 Students and hobbyists welcome — creativity > experience.
 
- Quick Links (Clickable “Buttons”)
-Action	Link
-Project Website	Pixel Hearts Hub
+ Quick Links:
 
-Submit Feedback	Email us
+| Action           | Link                                                             |
+| ---------------- | ---------------------------------------------------------------- |
+| Project Website  | [Pixel Hearts Hub](https://mochidevgames.github.io/pixelhearts/) |
+| Submit Feedback  | [Email us](mailto:mochidevgames@gmail.com)                       |
+| Join the Project | [Contact us](mailto:mochidevgames@gmail.com)                     |
 
-Join the Project	Contact us
 
-
- Philosophy
+ Philosophy:
 
 Start small, grow organically
 
@@ -153,7 +157,7 @@ Prioritize creativity, expression, and community
 
 Pixel Hearts is about exploration, not a finished product.
 
-Future Repository Sections
+Future Repository Sections:
 
 Development logs
 
@@ -165,7 +169,7 @@ Roadmap & milestones
 
 Early playable prototypes
 
-Transparency
+Transparency:
 
 Passion project
 
@@ -175,6 +179,6 @@ Goal: build something inspiring together
 
  
  
- License
+ License:
 
 Currently undecided — will be added once project contributions grow.
