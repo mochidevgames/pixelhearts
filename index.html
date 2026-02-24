@@ -6,45 +6,93 @@
 
 <title>PixelHearts</title>
 
-<!-- Pixel / Retro Fonts -->
+<!-- Retro / Pixel Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------------- BODY & GENERAL ---------------- */
+/* ---------------- BODY ---------------- */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Orbitron', sans-serif;
   overflow-x:hidden;
-}
-
-/* ---------------- BACKGROUND ---------------- */
-body{
   background: linear-gradient(to top, #87CEEB 0%, #87CEEB 50%, #fff 100%);
   transition: background 2s linear;
 }
 
-/* Day/Night animation */
+/* ---------------- DAY/NIGHT LOOP ---------------- */
 @keyframes dayNight{
   0%, 50% {background: linear-gradient(to top, #87CEEB 0%, #87CEEB 50%, #fff 100%);}
   51%, 100% {background: linear-gradient(to top, #0b1e3c 0%, #0b1e3c 50%, #1e2b4d 100%);}
 }
 body.daynight{
-  animation: dayNight 30s infinite alternate;
+  animation: dayNight 60s infinite alternate;
 }
 
-/* ---------------- PIXEL GRASS ---------------- */
+/* ---------------- PIXEL GRASS USING CSS ---------------- */
 .grass{
   position:fixed;
   bottom:0;
   width:100%;
-  height:120px;
-  background:url('https://i.ibb.co/xMkbYc0/pixel-grass.png') repeat-x; /* Placeholder pixel grass image */
-  animation: sway 3s ease-in-out infinite alternate;
+  height:80px;
+  background-color:#2b7a0b;
+  display:flex;
+  justify-content:space-around;
 }
 
-@keyframes sway{
-  0%{background-position-x:0;}
-  100%{background-position-x:50px;}
+.grass span{
+  width:4px;
+  height:20px;
+  background:#0a4d00;
+  display:inline-block;
+  margin:0 1px;
+  animation: swayGrass 3s ease-in-out infinite alternate;
+}
+
+.grass span:nth-child(even){animation-delay:1s;}
+.grass span:nth-child(3n){animation-delay:0.5s;}
+
+@keyframes swayGrass{
+  0%{transform:rotate(0deg);}
+  50%{transform:rotate(5deg);}
+  100%{transform:rotate(0deg);}
+}
+
+/* ---------------- CLOUDS ---------------- */
+.cloud{
+  position:absolute;
+  background:rgba(255,255,255,0.9);
+  border-radius:50%;
+  width:80px;
+  height:50px;
+  top:50px;
+  animation: cloudMove 90s linear infinite;
+}
+
+.cloud::before{
+  content:'';
+  position:absolute;
+  width:50px;
+  height:50px;
+  background:rgba(255,255,255,0.9);
+  border-radius:50%;
+  top:-10px;
+  left:-25px;
+}
+
+.cloud::after{
+  content:'';
+  position:absolute;
+  width:60px;
+  height:60px;
+  background:rgba(255,255,255,0.9);
+  border-radius:50%;
+  top:-20px;
+  left:30px;
+}
+
+@keyframes cloudMove{
+  0%{transform:translateX(-200px);}
+  100%{transform:translateX(120vw);}
 }
 
 /* ---------------- NAVBAR ---------------- */
@@ -105,14 +153,14 @@ nav{
 
 .dropdown-content a{
   display:block;
-  padding:10px 16px;
+  padding:8px 12px;
   text-decoration:none;
   color:white;
   font-family:'Press Start 2P', monospace;
+  font-size:10px;
   transition:.2s;
 }
 .dropdown-content a:hover{background:rgba(255,106,213,0.2);}
-.dropdown:hover .dropdown-content{display:block;}
 
 /* ---------------- HERO ---------------- */
 .hero{
@@ -134,7 +182,7 @@ nav{
 }
 
 .hero p{
-  font-size:18px;
+  font-size:16px;
   margin-top:20px;
   max-width:700px;
   color:white;
@@ -150,18 +198,19 @@ section{
 
 .pixel-box{
   background:rgba(0,0,0,0.5);
-  border:3px solid #ff6ad5;
+  border:2px solid #ff6ad5;
   border-radius:6px;
-  padding:25px;
+  padding:20px;
   margin:25px 0;
   box-shadow:0 0 15px rgba(255,106,213,0.3);
   font-family:'Press Start 2P', monospace;
+  font-size:12px; /* smaller text */
 }
 
 /* ---------------- JOIN BUTTON ---------------- */
 .join-btn{
   display:inline-block;
-  padding:24px 60px;
+  padding:28px 70px;
   font-size:22px;
   border:none;
   border-radius:8px;
@@ -178,6 +227,16 @@ section{
   box-shadow:0 0 50px rgba(255,106,213,0.8);
 }
 
+/* ---------------- MOBILE ADAPT ---------------- */
+@media(max-width:768px){
+  .nav-links{
+    flex-direction:column;
+  }
+  .dropdown-content{
+    position:relative;
+  }
+}
+
 </style>
 </head>
 
@@ -192,10 +251,10 @@ section{
     <a href="#community">Community</a>
 
     <div class="dropdown">
-      <a href="#" class="dropbtn">Join / Team ▼</a>
-      <div class="dropdown-content">
+      <a href="javascript:void(0);" class="dropbtn" onclick="toggleDropdown()">Join / Team ▼</a>
+      <div class="dropdown-content" id="dropdown">
         <a href="join.html">Join Project</a>
-        <a href="roles.html">Roles</a>
+        <a href="roles.html">Open Roles</a>
         <a href="coder.html">Coders</a>
         <a href="artist.html">Artists</a>
         <a href="animator.html">Animators</a>
@@ -209,7 +268,18 @@ section{
 </nav>
 
 <!-- PIXEL GRASS -->
-<div class="grass"></div>
+<div class="grass">
+  <!-- Generate many grass blades -->
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- CLOUDS -->
+<div class="cloud" style="top:60px; width:100px; height:60px; animation-duration:120s;"></div>
+<div class="cloud" style="top:100px; width:80px; height:50px; animation-duration:140s;"></div>
+<div class="cloud" style="top:30px; width:120px; height:70px; animation-duration:100s;"></div>
 
 <!-- HERO -->
 <div class="hero">
@@ -220,7 +290,7 @@ section{
 <!-- VISION -->
 <section id="vision" class="pixel-box">
   <h2>Our Vision</h2>
-  <p>Bring back the feeling of classic online communities. A place where you can express yourself with your avatar, meet friends, and shape a living digital world. PixelHearts is for the creators, the dreamers, and the ones who remember the magic of old-school social games.</p>
+  <p>Bring back the feeling of classic online communities. Express yourself with avatars, meet friends, decorate spaces, and shape a living digital world. PixelHearts is for the creators, dreamers, and those who remember the magic of old-school MMOs.</p>
 </section>
 
 <!-- FEATURES -->
@@ -237,14 +307,23 @@ section{
 <!-- COMMUNITY / JOIN -->
 <section id="community" class="pixel-box">
   <h2>Join The Project</h2>
-  <p>PixelHearts is a passion project — we’re looking for coders, artists, animators, designers, and community builders who want to help bring this world to life.</p>
-  <p>Currently this is a volunteer project, but if the game grows we hope to reward contributors.</p>
+  <p>PixelHearts is a passion project — we’re looking for coders, artists, animators, designers, and community builders who want to help bring this world to life. Volunteer-driven, but if the game grows we hope to reward contributors.</p>
   <button class="join-btn">Join Us</button>
 </section>
 
 <script>
-// Optional: toggle day/night faster with JS
-// Already handled by CSS animation loop
+function toggleDropdown(){
+  const dd = document.getElementById('dropdown');
+  dd.style.display = dd.style.display === 'block' ? 'none' : 'block';
+}
+
+// Optional: close dropdown if click outside
+window.onclick = function(e){
+  if(!e.target.matches('.dropbtn')){
+    const dd = document.getElementById('dropdown');
+    if(dd.style.display === 'block'){ dd.style.display = 'none'; }
+  }
+}
 </script>
 
 </body>
