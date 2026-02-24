@@ -3,262 +3,279 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelHearts</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<title>PixelHearts Project</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ---------------- GLOBAL ---------------- */
-*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-  font-family:'Orbitron', sans-serif;
-  overflow-x:hidden;
-  background: #fff;
-  position: relative;
+font-family: 'Inter', sans-serif;
+margin:0;
+background:#ffffff;
+color:#222;
+line-height:1.6;
 }
 
-/* GOLD ETCHED GLITTER EFFECT */
-body::before {
-  content:"";
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:
-    radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 60%) repeat;
-  pointer-events:none;
-  z-index:-1;
-  animation: shimmer 10s linear infinite;
+header{
+padding:60px 20px;
+text-align:center;
+border-bottom:1px solid #eee;
 }
 
-@keyframes shimmer {
-  0% {background-position:0 0;}
-  100% {background-position:1000px 1000px;}
+header h1{
+font-size:42px;
+letter-spacing:2px;
 }
 
-/* ---------------- NAVBAR ---------------- */
+header p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+color:#555;
+}
+
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 8%;
-  background:rgba(255,255,255,0.9);
-  box-shadow:0 0 15px rgba(255,215,0,0.5);
-  backdrop-filter:blur(8px);
-  position:fixed;
-  width:100%;
-  z-index:100;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px;
+border-bottom:1px solid #eee;
+background:white;
+position:sticky;
+top:0;
 }
 
-.logo{
-  font-family:'Press Start 2P', monospace;
-  color:#bfa12b;
-  font-size:20px;
-  text-shadow:0 0 10px #ffd700;
+nav a{
+text-decoration:none;
+color:#444;
+font-weight:600;
 }
 
-.nav-links a{
-  margin-left:18px;
-  text-decoration:none;
-  color:#444;
-  font-weight:bold;
-  transition:0.3s;
+nav a:hover{
+color:#000;
 }
 
-.nav-links a:hover{color:#bfa12b; text-shadow:0 0 10px #ffd700;}
-
-/* Dropdown */
-.dropdown{
-  position:relative;
-  display:inline-block;
-  margin-left:18px;
-}
-
-.dropbtn{
-  cursor:pointer;
-  color:#444;
-  font-weight:bold;
-  text-decoration:none;
-}
-
-.dropbtn:hover{color:#bfa12b; text-shadow:0 0 10px #ffd700;}
-
-.dropdown-content{
-  display:none;
-  position:absolute;
-  background-color:rgba(255,255,255,0.95);
-  min-width:180px;
-  box-shadow:0 8px 16px rgba(255,215,0,0.3);
-  border-radius:10px;
-  z-index:1000;
-  margin-top:10px;
-}
-
-.dropdown-content a{
-  display:block;
-  padding:8px 12px;
-  text-decoration:none;
-  color:#444;
-  font-family:'Press Start 2P', monospace;
-  font-size:10px;
-  transition:.2s;
-}
-
-.dropdown-content a:hover{color:#bfa12b; text-shadow:0 0 8px #ffd700;}
-.dropdown:hover .dropdown-content{display:block;}
-
-/* ---------------- HERO ---------------- */
-.hero{
-  height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-  margin-top:60px;
-}
-
-.hero h1{
-  font-family:'Press Start 2P', monospace;
-  font-size:48px;
-  color:#bfa12b;
-  text-shadow:0 0 15px #ffd700;
-}
-
-.hero p{
-  font-size:16px;
-  margin-top:20px;
-  max-width:700px;
-  color:#444;
-  text-shadow:0 0 4px rgba(255,215,0,0.5);
-}
-
-/* ---------------- SECTION BOXES ---------------- */
 section{
-  max-width:900px;
-  margin:50px auto;
-  padding:20px;
+max-width:900px;
+margin:auto;
+padding:60px 20px;
 }
 
-.pixel-box{
-  background:rgba(255,255,255,0.9);
-  border:2px solid #bfa12b;
-  border-radius:6px;
-  padding:20px;
-  margin:25px 0;
-  box-shadow:0 0 25px rgba(255,215,0,0.3);
-  font-family:'Press Start 2P', monospace;
-  font-size:12px;
-  line-height:1.5;
-  color:#444;
-  text-align:left;
+h2{
+margin-bottom:15px;
 }
 
-/* ---------------- JOIN BUTTON ---------------- */
-.join-btn{
-  display:inline-block;
-  padding:28px 70px;
-  font-size:22px;
-  border:none;
-  border-radius:8px;
-  background:linear-gradient(90deg,#bfa12b,#ffd700);
-  color:white;
-  cursor:pointer;
-  margin-top:20px;
-  box-shadow:0 0 40px rgba(255,215,0,0.5);
-  transition:0.3s;
+.grid{
+background:#fafafa;
+border:1px solid #eee;
+padding:20px;
+margin-top:20px;
+font-family:monospace;
 }
 
-.join-btn:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 60px rgba(255,215,0,0.8);
+.callout{
+background:#f5f5f5;
+border-left:4px solid #999;
+padding:20px;
+margin:25px 0;
 }
 
-/* ---------------- SUBJECT TO CHANGE SECTION ---------------- */
-#style-change{
-  text-align:center;
-  margin:50px auto 30px;
-  font-family:'Press Start 2P', monospace;
-  font-size:10px;
-  color:#bfa12b;
-  text-shadow:0 0 8px #ffd700;
+.email{
+text-align:center;
+margin-top:40px;
+font-size:18px;
 }
+
+footer{
+margin-top:80px;
+padding:40px;
+background:#fafafa;
+text-align:center;
+font-size:14px;
+color:#777;
+}
+
+button{
+background:black;
+color:white;
+border:none;
+padding:14px 28px;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+opacity:.85;
+}
+
 </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
+<header>
+
+<h1>PixelHearts</h1>
+
+<p>
+A next-generation social virtual world concept inspired by the golden era of online communities and modern grid platforms.
+</p>
+
+</header>
+
 <nav>
-  <div class="logo">PixelHearts</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="#vision">Vision</a>
-    <a href="#features">Features</a>
-    <a href="#community">Community</a>
-    <div class="dropdown">
-      <a href="javascript:void(0);" class="dropbtn">Join / Team ▼</a>
-      <div class="dropdown-content">
-        <a href="join.html">Join Project</a>
-        <a href="roles.html">Open Roles</a>
-        <a href="coder.html">Coders</a>
-        <a href="artist.html">Artists</a>
-        <a href="animator.html">Animators</a>
-        <a href="designer.html">Designers</a>
-        <a href="community.html">Community Builders</a>
-        <a href="studio.html">Studio Setup</a>
-      </div>
-    </div>
-  </div>
+<a href="#vision">Vision</a>
+<a href="#project">Project</a>
+<a href="#features">Features</a>
+<a href="#future">Future</a>
+<a href="#join">Join</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>PixelHearts</h1>
-  <p>A modern, inviting social MMO with luxury pixel vibes. Express yourself, meet friends, and explore a world inspired by classic MMOs with a shiny, glowing new aesthetic.</p>
+<section id="vision">
+
+<h2>The Vision</h2>
+
+<p>
+PixelHearts is an experimental passion project exploring what the next generation of virtual social worlds could become.
+</p>
+
+<p>
+Inspired by classic internet communities and modern virtual worlds, the goal is to build something creative, social, expressive, and community driven.
+</p>
+
+<div class="callout">
+This project is early.  
+There are no promises, timelines, or guarantees.  
+Only curiosity, passion, and the desire to build something meaningful together.
 </div>
 
-<!-- VISION -->
-<section id="vision" class="pixel-box">
-  <h2>Our Vision</h2>
-  <p>Bring back the feeling of classic online communities. Express yourself with avatars, meet friends, decorate spaces, and shape a living digital world. PixelHearts is for the creators, dreamers, and those who love social MMOs.</p>
 </section>
 
-<!-- FEATURES -->
-<section id="features" class="pixel-box">
-  <h2>Core Features</h2>
-  <ul>
-    <li>Deep avatar customization</li>
-    <li>Social hangouts & player housing</li>
-    <li>Events, trading, and community-driven content</li>
-    <li>Modern, glowing retro style</li>
-  </ul>
-</section>
+<section id="project">
 
-<!-- COMMUNITY / JOIN -->
-<section id="community" class="pixel-box">
-  <h2>Join The Project</h2>
-  <p>PixelHearts is a passion project — we’re looking for coders, artists, animators, designers, and community builders to help bring this world to life. Volunteer-driven, but if the game grows we hope to reward contributors.</p>
-  <button class="join-btn">Join Us</button>
-</section>
+<h2>What PixelHearts Is</h2>
 
-<!-- SUBJECT TO CHANGE -->
-<div id="style-change">
-  ⚠ Website style and background are <strong>Subject to Change</strong> as the project evolves ⚠
+<p>
+PixelHearts is planned as a browser based Grid Viewer connecting users to shared virtual spaces.
+</p>
+
+<p>
+Instead of a traditional MMO, the world is made of regions connected together in a grid.
+</p>
+
+<div class="grid">
+
+World Grid
+
+Central Plaza  
+Marketplace  
+Clubs  
+Creator Spaces  
+Housing Districts  
+Event Regions
+
 </div>
 
-<script>
-// Dropdown click
-const dropbtn = document.querySelector('.dropbtn');
-const dropdown = document.querySelector('.dropdown-content');
-dropbtn.addEventListener('click', () => {
-  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-});
-window.onclick = function(e){
-  if(!e.target.matches('.dropbtn')){
-    if(dropdown.style.display === 'block'){ dropdown.style.display = 'none'; }
-  }
-}
-</script>
+<p>
+The project begins small with a single space and grows outward as contributors and ideas expand the platform.
+</p>
+
+</section>
+
+<section id="features">
+
+<h2>Core Direction</h2>
+
+<p>
+The long-term vision explores modern systems similar to those seen in existing virtual worlds while pushing customization and creativity further.
+</p>
+
+<ul>
+
+<li>Full 3D camera control</li>
+<li>Walking avatars and movement</li>
+<li>Advanced avatar customization</li>
+<li>Attachment systems</li>
+<li>Lighting and atmosphere</li>
+<li>Animated objects and characters</li>
+<li>Interactive environments</li>
+
+</ul>
+
+<p>
+Creators should feel unrestricted and empowered to experiment.
+</p>
+
+</section>
+
+<section id="future">
+
+<h2>Long Term Exploration</h2>
+
+<p>
+If the project evolves, PixelHearts could expand into a much larger platform supporting creators, events, and community driven worlds.
+</p>
+
+<ul>
+
+<li>Creator tools</li>
+<li>User worlds</li>
+<li>Events and social hubs</li>
+<li>Marketplace systems</li>
+<li>Expanded avatar technology</li>
+
+</ul>
+
+<p>
+The goal is to explore what a modern grid-based virtual world could become.
+</p>
+
+</section>
+
+<section id="join">
+
+<h2>Join the Project</h2>
+
+<p>
+PixelHearts is currently a passion project looking for people who enjoy building creative things.
+</p>
+
+<p>
+Developers, artists, animators, designers, curious thinkers, or anyone who loves virtual worlds is welcome to contribute ideas or help shape the direction.
+</p>
+
+<div class="callout">
+
+There is currently no funding or payment.  
+This project exists because people enjoy building interesting things together.
+
+If the project grows, we will figure out the future together.
+
+</div>
+
+<div class="email">
+
+<p>
+Want to help, share ideas, or get involved?
+</p>
+
+<p>
+Email: <strong>mochidevgames@gmail.com</strong>
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+PixelHearts — Project Codename  
+Website and concept subject to change as the project evolves.
+
+</footer>
 
 </body>
 </html>
