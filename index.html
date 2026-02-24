@@ -21,20 +21,25 @@
     }
 
     /* --- Header / Navbar --- */
-    header {
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-    }
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Make sure sections scroll into view below the fixed header */
+section {
+  scroll-margin-top: 6rem; /* ~= height of header */
+}
 
     header h1 {
       font-family: 'Press Start 2P', cursive;
