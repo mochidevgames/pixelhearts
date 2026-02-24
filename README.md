@@ -6,7 +6,7 @@ Project: Pixel Hearts is an experimental virtual grid concept exploring shared d
 It combines nostalgia from classic social platforms with modern usability and creative freedom.
 This is a passion project, not a commercial MMO.
 
-Key Concept:
+ Key Concept:
 
 Sandbox for ideas
 
@@ -14,11 +14,14 @@ Collaborative digital frontier
 
 Community-driven exploration
 
+
  Project Goals
 Goal	Description
 Creative Freedom	User-built environments, custom avatars, attachments, community-driven content
 Modular Worlds	Interconnected regions, scalable design, flexible environments
 Creator-First Philosophy	Open collaboration, idea-driven development, welcoming to all creators
+
+ 
  Current Focus
 
 Website & public documentation
@@ -31,6 +34,8 @@ Proof-of-concept single shared region
 
 Focus is on creativity and building together — no deadlines or promises.
 
+
+ 
  Inspiration
 
 Pixel Hearts draws from:
@@ -43,6 +48,8 @@ Modern platforms: Discord, Steam
 
 Goal: combine nostalgia with modern usability.
 
+
+ 
  What We’re Building First
 
 Immediate priorities:
@@ -55,6 +62,8 @@ Community outreach & feedback
 
 Early visual identity
 
+
+ 
  Custom Profiles & Social Media
 
 Next-gen in-game profiles:
@@ -73,6 +82,8 @@ Features may include:
 
 Allows users to express identity and socialize effectively in-game.
 
+
+ 
  Security & Community Safety
 
 Expectations:
@@ -91,7 +102,10 @@ Community reporting
 
 Goal: minimize disruption while keeping the environment open.
 
+
+ 
  Ideas & Exploration
+ 
 Concept	Description
 Avatar Customization	Clothing, accessories, animation options
 Interactive Environments	Objects, tools, mini-games
@@ -105,6 +119,8 @@ Achievements	Badges, progression systems
 External Integration	Link to other platforms or social content
 
 These are conceptual ideas, not promises.
+
+
 
  Contributing
 Role	Description
@@ -125,7 +141,9 @@ Project Website	Pixel Hearts Hub
 Submit Feedback	Email us
 
 Join the Project	Contact us
-Philosophy
+
+
+ Philosophy
 
 Start small, grow organically
 
@@ -155,6 +173,8 @@ No guaranteed funding or release date
 
 Goal: build something inspiring together
 
-License
+ 
+ 
+ License
 
 Currently undecided — will be added once project contributions grow.
