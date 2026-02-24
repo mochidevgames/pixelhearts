@@ -6,280 +6,246 @@
 
 <title>PixelHearts</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Pixel / Retro Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+/* ---------------- BODY & GENERAL ---------------- */
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-font-family:Inter, sans-serif;
-background:#05050a;
-color:white;
-overflow-x:hidden;
+  font-family:'Orbitron', sans-serif;
+  overflow-x:hidden;
 }
 
-/* animated gradient background */
-
-body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:radial-gradient(circle at 20% 30%, #ff3cac, transparent 30%),
-radial-gradient(circle at 80% 40%, #784ba0, transparent 30%),
-radial-gradient(circle at 40% 80%, #2b86c5, transparent 30%);
-animation:moveBG 18s linear infinite;
-z-index:-1;
-opacity:.4;
+/* ---------------- BACKGROUND ---------------- */
+body{
+  background: linear-gradient(to top, #87CEEB 0%, #87CEEB 50%, #fff 100%);
+  transition: background 2s linear;
 }
 
-@keyframes moveBG{
-0%{transform:translate(0,0)}
-50%{transform:translate(-25%, -25%)}
-100%{transform:translate(0,0)}
+/* Day/Night animation */
+@keyframes dayNight{
+  0%, 50% {background: linear-gradient(to top, #87CEEB 0%, #87CEEB 50%, #fff 100%);}
+  51%, 100% {background: linear-gradient(to top, #0b1e3c 0%, #0b1e3c 50%, #1e2b4d 100%);}
+}
+body.daynight{
+  animation: dayNight 30s infinite alternate;
 }
 
-/* navbar */
+/* ---------------- PIXEL GRASS ---------------- */
+.grass{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:120px;
+  background:url('https://i.ibb.co/xMkbYc0/pixel-grass.png') repeat-x; /* Placeholder pixel grass image */
+  animation: sway 3s ease-in-out infinite alternate;
+}
 
+@keyframes sway{
+  0%{background-position-x:0;}
+  100%{background-position-x:50px;}
+}
+
+/* ---------------- NAVBAR ---------------- */
 nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(6px);
+  position:fixed;
+  width:100%;
+  z-index:100;
 }
 
 .logo{
-font-family:Orbitron;
-font-size:24px;
-letter-spacing:2px;
-color:#ff6ad5;
+  font-family:'Press Start 2P', monospace;
+  color:#ff6ad5;
+  font-size:20px;
 }
 
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:white;
-opacity:.8;
+.nav-links a{
+  margin-left:18px;
+  text-decoration:none;
+  color:white;
+  opacity:.8;
+  transition:0.3s;
 }
 
-/* hero */
+.nav-links a:hover{opacity:1; color:#8f9bff;}
 
+/* Dropdown */
+.dropdown{
+  position:relative;
+  display:inline-block;
+  margin-left:18px;
+}
+
+.dropbtn{
+  cursor:pointer;
+  color:white;
+  text-decoration:none;
+  opacity:.8;
+}
+
+.dropbtn:hover{opacity:1; color:#8f9bff;}
+
+.dropdown-content{
+  display:none;
+  position:absolute;
+  background-color:rgba(10,10,20,0.95);
+  min-width:180px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.3);
+  border-radius:10px;
+  z-index:1000;
+  margin-top:10px;
+}
+
+.dropdown-content a{
+  display:block;
+  padding:10px 16px;
+  text-decoration:none;
+  color:white;
+  font-family:'Press Start 2P', monospace;
+  transition:.2s;
+}
+.dropdown-content a:hover{background:rgba(255,106,213,0.2);}
+.dropdown:hover .dropdown-content{display:block;}
+
+/* ---------------- HERO ---------------- */
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  margin-top:60px;
 }
 
 .hero h1{
-font-family:Orbitron;
-font-size:72px;
-background:linear-gradient(90deg,#ff6ad5,#8f9bff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+  font-family:'Press Start 2P', monospace;
+  font-size:48px;
+  color:#ff6ad5;
+  text-shadow:2px 2px #1e1e2d;
 }
 
 .hero p{
-margin-top:20px;
-font-size:20px;
-max-width:600px;
-opacity:.9;
+  font-size:18px;
+  margin-top:20px;
+  max-width:700px;
+  color:white;
+  text-shadow:1px 1px #000;
 }
 
-.cta{
-margin-top:35px;
-padding:16px 36px;
-border:none;
-border-radius:12px;
-font-size:18px;
-background:linear-gradient(90deg,#ff6ad5,#8f9bff);
-color:white;
-cursor:pointer;
-box-shadow:0 0 20px rgba(255,106,213,.6);
-transition:.3s;
-}
-
-.cta:hover{
-transform:translateY(-4px);
-box-shadow:0 0 35px rgba(255,106,213,.9);
-}
-
-/* section */
-
+/* ---------------- SECTION BOXES ---------------- */
 section{
-padding:100px 10%;
-max-width:1200px;
-margin:auto;
+  max-width:900px;
+  margin:50px auto;
+  padding:20px;
 }
 
-.section-title{
-font-family:Orbitron;
-font-size:36px;
-margin-bottom:40px;
-text-align:center;
+.pixel-box{
+  background:rgba(0,0,0,0.5);
+  border:3px solid #ff6ad5;
+  border-radius:6px;
+  padding:25px;
+  margin:25px 0;
+  box-shadow:0 0 15px rgba(255,106,213,0.3);
+  font-family:'Press Start 2P', monospace;
 }
 
-/* cards */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
+/* ---------------- JOIN BUTTON ---------------- */
+.join-btn{
+  display:inline-block;
+  padding:24px 60px;
+  font-size:22px;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(90deg,#ff6ad5,#8f9bff);
+  color:white;
+  cursor:pointer;
+  margin-top:20px;
+  box-shadow:0 0 30px rgba(255,106,213,0.5);
+  transition:0.3s;
 }
 
-.card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-padding:30px;
-border-radius:16px;
-backdrop-filter:blur(12px);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#ff6ad5;
-box-shadow:0 0 25px rgba(255,106,213,.3);
-}
-
-/* vision block */
-
-.vision{
-text-align:center;
-max-width:750px;
-margin:auto;
-font-size:18px;
-line-height:1.7;
-opacity:.9;
-}
-
-/* footer */
-
-footer{
-text-align:center;
-padding:40px;
-opacity:.6;
-border-top:1px solid rgba(255,255,255,.1);
+.join-btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 50px rgba(255,106,213,0.8);
 }
 
 </style>
 </head>
 
-<body>
+<body class="daynight">
 
+<!-- NAVBAR -->
 <nav>
   <div class="logo">PixelHearts</div>
   <div class="nav-links">
-    <a href="index.html">Vision</a>
-    <a href="index.html#features">Features</a>
-    <a href="index.html#community">Community</a>
+    <a href="#vision">Vision</a>
+    <a href="#features">Features</a>
+    <a href="#community">Community</a>
 
-    <!-- Dropdown Menu -->
     <div class="dropdown">
       <a href="#" class="dropbtn">Join / Team ▼</a>
       <div class="dropdown-content">
-        <a href="join.html">Join the Project</a>
-        <a href="roles.html">Open Roles</a>
+        <a href="join.html">Join Project</a>
+        <a href="roles.html">Roles</a>
         <a href="coder.html">Coders</a>
         <a href="artist.html">Artists</a>
         <a href="animator.html">Animators</a>
         <a href="designer.html">Designers</a>
         <a href="community.html">Community Builders</a>
-        <a href="studio.html">Studio / Setup</a>
+        <a href="studio.html">Studio Setup</a>
       </div>
     </div>
 
   </div>
 </nav>
 
+<!-- PIXEL GRASS -->
+<div class="grass"></div>
+
+<!-- HERO -->
 <div class="hero">
-
-<h1>PixelHearts</h1>
-
-<p>
-A new social MMO where identity, creativity,
-and internet culture collide.
-</p>
-
-<button class="cta">Join the Community</button>
-
+  <h1>PixelHearts</h1>
+  <p>A nostalgic social MMO where creativity, community, and fun collide. Build, hang out, and play in a pixel world inspired by Gaia Online, IMVU, RuneScape, and old internet vibes.</p>
 </div>
 
-<section>
-
-<h2 class="section-title">Our Vision</h2>
-
-<p class="vision">
-The internet used to feel like a world.  
-PixelHearts is our attempt to bring that feeling back.
-
-A place where players can express themselves through
-avatars, fashion, homes, and communities.
-
-Not just a game —
-a digital universe shaped by the people inside it.
-</p>
-
+<!-- VISION -->
+<section id="vision" class="pixel-box">
+  <h2>Our Vision</h2>
+  <p>Bring back the feeling of classic online communities. A place where you can express yourself with your avatar, meet friends, and shape a living digital world. PixelHearts is for the creators, the dreamers, and the ones who remember the magic of old-school social games.</p>
 </section>
 
-<section>
-
-<h2 class="section-title">Core Pillars</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Expression</h3>
-<p>Create unique avatars with deep customization and collectible fashion.</p>
-</div>
-
-<div class="card">
-<h3>Community</h3>
-<p>Meet new friends, join scenes, and hang out in social spaces.</p>
-</div>
-
-<div class="card">
-<h3>Creativity</h3>
-<p>Decorate spaces, show off style, and influence the culture.</p>
-</div>
-
-<div class="card">
-<h3>Economy</h3>
-<p>Trade items, collect rare cosmetics, and build value.</p>
-</div>
-
-</div>
-
+<!-- FEATURES -->
+<section id="features" class="pixel-box">
+  <h2>Core Features</h2>
+  <ul>
+    <li>Deep avatar customization</li>
+    <li>Social hangouts & player housing</li>
+    <li>Events, trading, and community-driven content</li>
+    <li>Pixel-style art and nostalgic vibe</li>
+  </ul>
 </section>
 
-<section>
-
-<h2>Join The Project</h2>
-
-<p>
-PixelHearts is looking for passionate creators who want to build something fun together.
-</p>
-
-<a href="join.html">
-<button>Join Us</button>
-</a>
-
+<!-- COMMUNITY / JOIN -->
+<section id="community" class="pixel-box">
+  <h2>Join The Project</h2>
+  <p>PixelHearts is a passion project — we’re looking for coders, artists, animators, designers, and community builders who want to help bring this world to life.</p>
+  <p>Currently this is a volunteer project, but if the game grows we hope to reward contributors.</p>
+  <button class="join-btn">Join Us</button>
 </section>
 
-<footer>
-
-PixelHearts — Early Development
-
-</footer>
+<script>
+// Optional: toggle day/night faster with JS
+// Already handled by CSS animation loop
+</script>
 
 </body>
 </html>
